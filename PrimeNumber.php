@@ -1,6 +1,6 @@
 <?php
 
-$numbers = primenumber(1000);
+$numbers = primenumber(100);
 
 maketable($numbers[0]);
 
@@ -18,6 +18,7 @@ function primenumber($count = 100){
 	}
 
 	for($num = 2; $num <= count($numbers); $num++){
+		//echo $num."の位を計算中...\n";
 		for($num2 = 1; $num2 <= $count; $num2++){
 			$result = $num * $num2;
 			if(!isset($numbers[$result])){
@@ -35,6 +36,8 @@ function primenumber($count = 100){
 }
 
 function maketable($numbers = [], $echo = true){
+	echo "表を作成中....\n";
+
 	$num2 = 0;
 	$count_strlen = strlen(count($numbers));
 	
